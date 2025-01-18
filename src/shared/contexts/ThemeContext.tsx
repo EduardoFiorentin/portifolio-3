@@ -16,7 +16,7 @@ export const useAppThemeContext = () => {
 
 export const AppThemeProvider: React.FC<{children: React.ReactNode}> = ({children}) => {
 
-    const [themeName, setThemeName] = useState<'light'|'dark'>('light')
+    const [themeName, setThemeName] = useState<'light'|'dark'>('dark')
 
     // useCallback e useMemo - evita que a função/valor seja recalculada a cada renderização 
 

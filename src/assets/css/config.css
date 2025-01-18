@@ -1,0 +1,5 @@
+/* Works on Firefox */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: blue rgb(0, 0, 63);
+  }

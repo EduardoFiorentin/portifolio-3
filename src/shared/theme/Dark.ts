@@ -1,14 +1,14 @@
 import {createTheme} from "@mui/material"
-import { cyan, yellow } from "@mui/material/colors"
+import { cyan } from "@mui/material/colors"
 
 export const DarkTheme = createTheme({
     palette: {
         mode: "dark",
         primary: {
-            main: yellow[700],      
-            dark: yellow[800],
-            light: yellow[500],
-            contrastText: "#ffffff"  // cor que dá contraste com a main para textos
+            main: "#042959",      
+            dark: "#03318C",
+            light: "#3999BF",
+            contrastText: "#F2F2F2"  // cor que dá contraste com a main para textos
         }, 
         secondary: {
             main: cyan[700],
@@ -25,7 +25,7 @@ export const DarkTheme = createTheme({
     // aplica alterações ao tema padrão do componente Typography
     typography: {
         allVariants: {
-            color: "white"
+            color: "#F2F2F2"
         }
     }
 })
