@@ -4,7 +4,7 @@ import { PageBase } from "../../shared/layouts/PageBase/PageBase"
 import image from "../../assets/img/foto_perfil.jpg"
 import { Menu } from "../../shared/components/Menu/Menu"
 
-const Home = () => {
+const Presentation1 = () => {
     return (
         <Box sx={{
             overflowX: "hidden",
@@ -81,4 +81,4 @@ const Home = () => {
     )
 }
 
-export { Home }
+export { Presentation1 as Home }
