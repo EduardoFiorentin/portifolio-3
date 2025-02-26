@@ -8,7 +8,7 @@ export const Menu = () => {
     return (
         
         visible && (
-        <Box component={"nav"} position={"fixed"} sx={{backdropFilter: "blur(20px)"}} width={"100%"} display={"flex"} top={0} borderBottom={"1px solid white"}>
+        <Box component={"nav"} position={"fixed"} sx={{backdropFilter: "blur(20px)"}} width={"100%"} display={"flex"} top={0} borderBottom={"1px solid white"} height={"40px"}>
             <Box width={"30%"}>
                 
             </Box>

@@ -1,5 +1,5 @@
 import { Box } from "@mui/material";
-import React, { Dispatch, SetStateAction, useEffect } from "react";
+import React, { Dispatch, SetStateAction } from "react";
 
 interface ITechCardBox {
     children: React.ReactNode,
@@ -17,7 +17,7 @@ export const TechCardBox = ({children, payload, setDesc, setTitle}: ITechCardBox
     }
 
     return (
-       <Box width={"90px"} 
+       <Box width={"120px"} 
             height={"100px"} 
             border={"3px solid white"}
             borderRadius={"10px"}

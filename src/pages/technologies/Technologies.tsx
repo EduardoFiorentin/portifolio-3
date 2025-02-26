@@ -22,6 +22,7 @@ import Figma from "../../assets/icons/Figma.svg";
 import Java from "../../assets/icons/Java.svg";
 import Py from "../../assets/icons/Py.svg";
 import Cpp from "../../assets/icons/Cpp.svg";
+import { Menu } from "../../shared/components/Menu/Menu"
 
 const descriptions = {
     "default": {
@@ -102,21 +103,22 @@ export const Technologies = () => {
     return (
         <PageBase
             title="Tecnologias"
-
         > 
+        <>
+            <Menu />
             <Box
             height="auto"
             display="flex"
-            justifyContent="center"
+            justifyContent="space-around"
             padding="20px"
             gap={10}
         >
-            <Box height={"90%"} display={"flex"} flexDirection={"column"} width={"20%"} gap={6} mt={"30px"}>
+            <Box height={"90%"} display={"flex"} flexDirection={"column"} width={"40%"} gap={6} mt={"30px"}>
                 <Typography component={"h3"} fontSize={"30px"} fontWeight={"bold"}>{title}</Typography>
                 <Typography component={"h3"} fontSize={"20px"} fontWeight={"normal"} color="textSecondary"><p>{desc}</p></Typography>
             </Box>
 
-            <Box display={"flex"} flexDirection={"column"} gap={2}>
+            <Box display={"flex"} flexDirection={"column"} gap={2} width={"40%"}>
                 {/* Linha 1 */}
                 <Box display={"flex"} flexDirection={"row"} gap={2}>
                     <TechCardBox payload={descriptions.html} setTitle={setTitle} setDesc={setDesc}>
@@ -182,6 +184,7 @@ export const Technologies = () => {
                 </Box>
             </Box>
         </Box>
+        </>
         </PageBase>
     )
 }

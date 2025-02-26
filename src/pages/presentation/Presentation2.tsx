@@ -69,10 +69,10 @@ const Presentation2 = () => {
                             </Box>
                             {/* Icones */}
                             <Box display={"flex"} gap={2}>
-                                <IconBox>
+                                <IconBox width="50px" height="50px" href="https://github.com/EduardoFiorentin">
                                     <GitHub sx={{ width: "50px", height: "50px", cursor: "pointer" }} color="action" />
                                 </IconBox>
-                                <IconBox>
+                                <IconBox width="50px" height="50px" href="https://linkedin.com/in/eduardo-fiorentin">
                                     <LinkedIn sx={{ width: "50px", height: "50px", cursor: "pointer" }} color="action" />
                                 </IconBox>
                             </Box>
