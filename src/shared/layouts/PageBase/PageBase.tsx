@@ -1,8 +1,12 @@
-import { Box, Typography } from "@mui/material"
+import { Box, Typography, useMediaQuery, useTheme } from "@mui/material"
 import React from "react"
 import { Menu } from "../../components/Menu/Menu"
 
 const PageBase: React.FC<{title: string, children: React.ReactElement}> = ({title, children}) => {
+    const theme = useTheme();
+    const smDown = useMediaQuery(theme.breakpoints.down("sm"));
+    const mdDown = useMediaQuery(theme.breakpoints.down("md"));
+    
     return (
         <Box 
         sx={{
@@ -17,7 +21,7 @@ const PageBase: React.FC<{title: string, children: React.ReactElement}> = ({titl
             >
                 <Typography
                 sx={{
-                    fontSize: 45,
+                    fontSize: smDown ? 30 : 40,
                     fontWeight: "bold"
                 }}>
                     {title}

@@ -1,7 +1,12 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Typography, useMediaQuery, useTheme } from "@mui/material";
 import image from "../../../assets/img/header__back.png";
 
+
 const Header = () => {
+
+    const theme = useTheme();
+    const smDown = useMediaQuery(theme.breakpoints.down("sm"));
+
     return (
         <Box 
             component="header" 
@@ -24,13 +29,13 @@ const Header = () => {
                     marginBottom: "120px"
                 }}
             >
-                <Typography fontWeight="bold" textAlign={"start"} fontSize={18}>
+                <Typography fontWeight="bold" textAlign={"start"} fontSize={smDown ? 13 : 18}>
                     Olá, meu nome é
                 </Typography>
-                <Typography fontSize={56} fontWeight="bold" color="red" lineHeight={0.8} sx={{textShadow: "3px 1px 17px rgba(255,0,0,0.72);"}} >
+                <Typography  fontSize={smDown ? 30 : 56} fontWeight="bold" color="red" lineHeight={0.8} sx={{textShadow: "3px 1px 17px rgba(255,0,0,0.72);"}} >
                     Eduardo Fiorentin
                 </Typography>
-                <Typography fontSize={30} letterSpacing={5} fontWeight={"bolder"}>
+                <Typography fontSize={smDown ? 10 : 30} letterSpacing={5} fontWeight={"bolder"}>
                     Desenvolvedor Web
                 </Typography>
             </Box>
