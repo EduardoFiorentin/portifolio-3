@@ -1,5 +1,6 @@
 import { Box, Button, Typography } from "@mui/material"
 import { useState } from "react"
+import { Link } from "react-router-dom"
 
 export const Menu = () => {
 
@@ -16,17 +17,17 @@ export const Menu = () => {
                 
             </Box>
             <Box display={"flex"} justifyContent={"space-around"} width={"30%"} paddingRight={"40px"}>
-                <Button color="info">
-                    Sobre
+                <Button color="info" >
+                    <Link to={"/"} style={{color: "white", textDecoration: "none"}}>Sobre</Link>
                 </Button>
                 <Button color="info">
-                    Tecnologias
+                    <Link to={"/tech"} style={{color: "white", textDecoration: "none"}}>Tecnologias</Link>
                 </Button>
                 <Button color="info">
-                    Experiências 
+                    <Link to={"/experiences"} style={{color: "white", textDecoration: "none"}}>Experiências</Link>
                 </Button>
                 <Button color="info">
-                    Projetos 
+                    <Link to={"/projects"} style={{color: "white", textDecoration: "none"}}>Projetos</Link> 
                 </Button>
             </Box>
 
