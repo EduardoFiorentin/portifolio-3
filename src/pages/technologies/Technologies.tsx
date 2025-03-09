@@ -35,15 +35,15 @@ const descriptions = {
     },
     "css": { 
         "title": "CSS3", 
-        "desc": "Linguagem de estilo utilizada para definir a aparência e o layout das páginas web, incluindo cores, fontes e responsividade." 
+        "desc": "Linguagem de estilos em cascata, utilizada para definir a aparência e o layout das páginas web, incluindo cores, fontes e responsividade." 
     },
     "js": { 
         "title": "JavaScript", 
-        "desc": "Linguagem de programação usada para criar interatividade em páginas web, permitindo manipulação do DOM, eventos e chamadas assíncronas." 
+        "desc": "Linguagem de programação usada para criar interatividade em páginas web, permitindo manipulação do DOM, eventos e chamadas assíncronas. Serve ainda como base para o desenvolvimento de frameworks e bibliotecas populares, como ReactJs e Vue." 
     },
     "node": { 
         "title": "Node.js", 
-        "desc": "Ambiente de execução para JavaScript no lado do servidor, permitindo a criação de aplicações web escaláveis e APIs eficientes." 
+        "desc": "Ambiente de execução para JavaScript no lado do servidor que permite a criação de aplicações web escaláveis e APIs eficientes." 
     },
     "ts": { 
         "title": "TypeScript", 
@@ -51,11 +51,11 @@ const descriptions = {
     },
     "react": { 
         "title": "React", 
-        "desc": "Biblioteca JavaScript para construção de interfaces de usuário dinâmicas e reativas, baseada em componentes reutilizáveis." 
+        "desc": "Framework open source JavaScript para construção de interfaces de usuário dinâmicas e reativas, baseada em componentes reutilizáveis. Otimiza a renderização de páginas web e aplicações, facilitando a criação de SPAs (Single Page Applications)." 
     },
     "spring": { 
         "title": "Spring Boot", 
-        "desc": "Framework Java para desenvolvimento de aplicações web e microsserviços, simplificando a configuração e a segurança." 
+        "desc": "Framework open source Java para desenvolvimento de aplicações web e microsserviços, baseado nos padrões de projeto inversão de controle e injeção de dependẽncias. Facilita a criação de aplicações robustas e escaláveis. " 
     },
     "mui": { 
         "title": "Material-UI", 

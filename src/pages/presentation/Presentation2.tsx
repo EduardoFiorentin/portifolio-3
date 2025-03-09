@@ -1,10 +1,8 @@
 import { Box, Button, Typography, useMediaQuery, useTheme } from "@mui/material"
 import { Header } from "../../shared/components/Header/Header"
 import { PageBase } from "../../shared/layouts/PageBase/PageBase"
-import image from "../../assets/img/foto_perfil.jpg"
 import { Menu } from "../../shared/components/Menu/Menu"
 import { GitHub, LinkedIn, Scale } from "@mui/icons-material"
-import Link from '@mui/material/Link';
 import Divider from '@mui/material/Divider';
 import { IconBox } from "../../shared/components/IconBox/IconBox"
 
