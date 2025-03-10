@@ -5,6 +5,7 @@ import { Menu } from "../../shared/components/Menu/Menu"
 import { GitHub, LinkedIn, Scale } from "@mui/icons-material"
 import Divider from '@mui/material/Divider';
 import { IconBox } from "../../shared/components/IconBox/IconBox"
+import { useEffect } from "react"
 
 const Presentation2 = () => {
     
@@ -12,6 +13,7 @@ const Presentation2 = () => {
     const theme = useTheme();
     const smDown = useMediaQuery(theme.breakpoints.down("sm"));
     const mdDown = useMediaQuery(theme.breakpoints.down("md"));
+
     
     return (
         <Box sx={{

@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material"
+import { Box, Typography, useMediaQuery, useTheme } from "@mui/material"
 import { PageBase } from "../../shared/layouts/PageBase/PageBase"
 // import { Html, Css, Javascript, Image } from "@mui/icons-material"
 import { TechCardBox } from "../../shared/components/TechCardBox/TechCardBox"
@@ -27,7 +27,7 @@ import { Menu } from "../../shared/components/Menu/Menu"
 const descriptions = {
     "default": {
         "title": "Olá, mundo!",
-        "desc": "--*-- Passe o mouse sobre os ícones para ler --*--",
+        "desc": "--*-- Clique nos icones para ler --*--",
     },
     "html": { 
         "title": "HTML5", 
@@ -100,6 +100,12 @@ export const Technologies = () => {
     const [title, setTitle] = useState(descriptions.default.title)
     const [desc, setDesc] = useState(descriptions.default.desc)
 
+        
+    const theme = useTheme();
+    const smDown = useMediaQuery(theme.breakpoints.down("sm"));
+    const mdDown = useMediaQuery(theme.breakpoints.down("md"));
+    const lgDown = useMediaQuery(theme.breakpoints.down("lg"));
+
     return (
         <PageBase
             title="Tecnologias"
@@ -109,78 +115,96 @@ export const Technologies = () => {
             <Box
             height="auto"
             display="flex"
-            justifyContent="space-around"
+            flexDirection={smDown ? "column" : mdDown ? "column" : lgDown ? "column" : "row"}
+            justifyContent={"center"}
+            alignItems={"center"}
             padding="20px"
             gap={10}
         >
-            <Box height={"90%"} display={"flex"} flexDirection={"column"} width={"40%"} gap={6} mt={"30px"}>
+            <Box height={"90%"} display={"flex"} flexDirection={"column"} width={mdDown ? "100%" : "40%"} gap={6} mt={"30px"} alignItems={"center"} justifyContent={"center"} textAlign={"center"} >
                 <Typography component={"h3"} fontSize={"30px"} fontWeight={"bold"}>{title}</Typography>
                 <Typography component={"h3"} fontSize={"20px"} fontWeight={"normal"} color="textSecondary"><p>{desc}</p></Typography>
             </Box>
 
-            <Box display={"flex"} flexDirection={"column"} gap={2} width={"40%"}>
+            <Box display={"flex"} alignItems="center" flexDirection={"column"} gap={2}  width={mdDown ? "90%" : "40%"}>
                 {/* Linha 1 */}
                 <Box display={"flex"} flexDirection={"row"} gap={2}>
-                    <TechCardBox payload={descriptions.html} setTitle={setTitle} setDesc={setDesc}>
-                        <Icon src={Html}/>
-                    </TechCardBox>
-                    <TechCardBox payload={descriptions.css} setTitle={setTitle} setDesc={setDesc}>
-                        <Icon src={Css}/>
-                    </TechCardBox>
-                    <TechCardBox payload={descriptions.js} setTitle={setTitle} setDesc={setDesc}>
-                        <Icon src={Js}/>
-                    </TechCardBox>
-                    <TechCardBox payload={descriptions.node} setTitle={setTitle} setDesc={setDesc}>
-                        <Icon src={Node}/>
-                    </TechCardBox>
+                    <Box display={"flex"} flexDirection={mdDown ? "column" : "row"} gap={2}>
+                        <TechCardBox payload={descriptions.html} setTitle={setTitle} setDesc={setDesc}>
+                            <Icon src={Html}/>
+                        </TechCardBox>
+                        <TechCardBox payload={descriptions.css} setTitle={setTitle} setDesc={setDesc}>
+                            <Icon src={Css}/>
+                        </TechCardBox>
+                    </Box>
+                    <Box display={"flex"} flexDirection={mdDown ? "column" : "row"} gap={2}>
+                        <TechCardBox payload={descriptions.js} setTitle={setTitle} setDesc={setDesc}>
+                            <Icon src={Js}/>
+                        </TechCardBox>
+                        <TechCardBox payload={descriptions.node} setTitle={setTitle} setDesc={setDesc}>
+                            <Icon src={Node}/>
+                        </TechCardBox>
+                    </Box>
                 </Box>
 
                 {/* Linha 2 */}
                 <Box display={"flex"} flexDirection={"row"} gap={2}>
-                    <TechCardBox payload={descriptions.ts} setTitle={setTitle} setDesc={setDesc}>
-                        <Icon src={Ts}/>
-                    </TechCardBox>
-                    <TechCardBox payload={descriptions.react} setTitle={setTitle} setDesc={setDesc}>
-                        <Icon src={React}/>
-                    </TechCardBox>
-                    <TechCardBox payload={descriptions.spring} setTitle={setTitle} setDesc={setDesc}>
-                        <Icon src={Spring}/>
-                    </TechCardBox>
-                    <TechCardBox payload={descriptions.mui} setTitle={setTitle} setDesc={setDesc}>
-                        <Icon src={Mui}/>
-                    </TechCardBox>
+                    <Box display={"flex"} flexDirection={mdDown ? "column" : "row"} gap={2}>
+                        <TechCardBox payload={descriptions.ts} setTitle={setTitle} setDesc={setDesc}>
+                            <Icon src={Ts}/>
+                        </TechCardBox>
+                        <TechCardBox payload={descriptions.react} setTitle={setTitle} setDesc={setDesc}>
+                            <Icon src={React}/>
+                        </TechCardBox>
+                    </Box>
+                    <Box display={"flex"} flexDirection={mdDown ? "column" : "row"} gap={2}>
+                        <TechCardBox payload={descriptions.spring} setTitle={setTitle} setDesc={setDesc}>
+                            <Icon src={Spring}/>
+                        </TechCardBox>
+                        <TechCardBox payload={descriptions.mui} setTitle={setTitle} setDesc={setDesc}>
+                            <Icon src={Mui}/>
+                        </TechCardBox>
+                    </Box>
                 </Box>
 
                 {/* Linha 3 */}
                 <Box display={"flex"} flexDirection={"row"} gap={2}>
-                    <TechCardBox payload={descriptions.tw} setTitle={setTitle} setDesc={setDesc}>
-                        <Icon src={Tw}/>
-                    </TechCardBox>
-                    <TechCardBox payload={descriptions.git} setTitle={setTitle} setDesc={setDesc}>
-                        <Icon src={Git}/>
-                    </TechCardBox>
-                    <TechCardBox payload={descriptions.swagger} setTitle={setTitle} setDesc={setDesc}>
-                        <Icon src={Swagger}/>
-                    </TechCardBox>
-                    <TechCardBox payload={descriptions.pg} setTitle={setTitle} setDesc={setDesc}>
-                        <Icon src={Pg}/>
-                    </TechCardBox>
+                    <Box display={"flex"} flexDirection={mdDown ? "column" : "row"} gap={2}>
+                        <TechCardBox payload={descriptions.tw} setTitle={setTitle} setDesc={setDesc}>
+                            <Icon src={Tw}/>
+                        </TechCardBox>
+                        <TechCardBox payload={descriptions.git} setTitle={setTitle} setDesc={setDesc}>
+                            <Icon src={Git}/>
+                        </TechCardBox>
+                    </Box>
+                    <Box display={"flex"} flexDirection={mdDown ? "column" : "row"} gap={2}>
+                        <TechCardBox payload={descriptions.swagger} setTitle={setTitle} setDesc={setDesc}>
+                            <Icon src={Swagger}/>
+                        </TechCardBox>
+                        <TechCardBox payload={descriptions.pg} setTitle={setTitle} setDesc={setDesc}>
+                            <Icon src={Pg}/>
+                        </TechCardBox>
+                    </Box>
                 </Box>
 
                 {/* Linha 4 */}
                 <Box display={"flex"} flexDirection={"row"} gap={2}>
-                    <TechCardBox payload={descriptions.figma} setTitle={setTitle} setDesc={setDesc}>
-                        <Icon src={Figma}/>
-                    </TechCardBox>
-                    <TechCardBox payload={descriptions.java} setTitle={setTitle} setDesc={setDesc}>
-                        <Icon src={Java}/>
-                    </TechCardBox>
-                    <TechCardBox payload={descriptions.py} setTitle={setTitle} setDesc={setDesc}>
-                        <Icon src={Py}/>
-                    </TechCardBox>
-                    <TechCardBox payload={descriptions.cpp} setTitle={setTitle} setDesc={setDesc}>
-                        <Icon src={Cpp}/>
-                    </TechCardBox>
+                    <Box display={"flex"} flexDirection={mdDown ? "column" : "row"} gap={2}>
+                        <TechCardBox payload={descriptions.figma} setTitle={setTitle} setDesc={setDesc}>
+                            <Icon src={Figma}/>
+                        </TechCardBox>
+                        <TechCardBox payload={descriptions.java} setTitle={setTitle} setDesc={setDesc}>
+                            <Icon src={Java}/>
+                        </TechCardBox>
+                    </Box>
+                    <Box display={"flex"} flexDirection={mdDown ? "column" : "row"} gap={2}>
+                        <TechCardBox payload={descriptions.py} setTitle={setTitle} setDesc={setDesc}>
+                            <Icon src={Py}/>
+                        </TechCardBox>
+                        <TechCardBox payload={descriptions.cpp} setTitle={setTitle} setDesc={setDesc}>
+                            <Icon src={Cpp}/>
+                        </TechCardBox>
+                    </Box>
                 </Box>
             </Box>
         </Box>

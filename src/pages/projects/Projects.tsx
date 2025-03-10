@@ -7,6 +7,7 @@ import imageSearchDevs from "../../assets/img/searchdevs.png"
 import imageCheckSp from "../../assets/img/csia.png" 
 import imageSr from "../../assets/img/sr.png" 
 import imageGym from "../../assets/img/gym.png" 
+import { useEffect } from "react"
 
 export const Projects = () => {
 
@@ -50,10 +51,29 @@ export const Projects = () => {
    
     ]
 
+    
+    const getReadme = async () => {
+        await fetch("https://api.github.com/repos/EduardoFiorentin/portifolio-3/contents/README.md?ref=main")
+        .then(response => response.json())
+        .then(data => {
+            console.log(data)
+            const decodedContent = atob(data.content);
+            console.log(decodedContent);
+            const lines = decodedContent.split("\n")
+            const codes = lines[0].split("_")
+            console.log(codes)
+            
+        })
+        .catch(error => console.log(error))
+    }
+
+    useEffect(() => {
+        getReadme()
+    }, [])
+
     return (
         <PageBase title="Projetos">
             <Box
-                // paddingLeft="20px"
                 display={"flex"}
                 flexDirection={"column"}
                 alignItems={"center"}

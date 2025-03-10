@@ -1,4 +1,4 @@
-import { Box, Typography } from "@mui/material"
+import { Box, Typography, useMediaQuery, useTheme } from "@mui/material"
 import { IconBox } from "../IconBox/IconBox"
 import { Icon } from "../Icon/Icon"
 import { GitHub, PlayCircleOutline, Language } from "@mui/icons-material"
@@ -15,20 +15,22 @@ interface IProjectItem {
 }
 
 export const ProjectItem = (item: IProjectItem) => {
+    
+    const theme = useTheme();
+    const mdDown = useMediaQuery(theme.breakpoints.down("md"));
+    
     return (
         <Box
-            height={"230px"}
+            height={mdDown ? "auto" : "280px"}
             width={"70%"}
             maxWidth={"940px"}
             display={"flex"}
+            flexDirection={mdDown ? "column" : "row"}
             alignItems={"center"}
             padding={"20px"}
             border={"1px solid black"}
             borderRadius={"10px"}
             sx={{
-                // ":not(:last-child)": {
-                //     marginBottom: "30px"
-                // },
                 marginBottom: "30px",
                 ":first-child": {
                     marginTop: "30px"
@@ -39,20 +41,17 @@ export const ProjectItem = (item: IProjectItem) => {
             <Box style={{
                 backgroundImage: `url("${item.img}")`,
                 borderRadius: "10px",
-                width: "35%",
+                width: mdDown ? '90%' : "35%",
                 height: "200px",
                 backgroundPosition: "center",
                 backgroundSize: "cover",
                 backgroundRepeat: "no-repeat"
-            }}
-                maxWidth={"200px"}
-                // marginRight={"10px"}
-            >
+            }}>
 
             </Box>
             <Box
                 marginX={"20px"}
-                width={"70%"}
+                width={mdDown ? "90%" : "70%"}
                 height={"100%"}
                 display={"flex"}
                 flexDirection={"column"}
@@ -61,22 +60,26 @@ export const ProjectItem = (item: IProjectItem) => {
                 <Typography
                     component={"h3"}
                     variant="h4"
+                    fontSize={mdDown ? "1.5rem" : "auto"}
+                    margin={mdDown ? "20px 0" : "0"}
                 >
                     {item.title}
                 </Typography>
                 <Typography
                     component={"p"}
                     variant="overline"
+                    fontSize={mdDown ? ".6rem" : "auto"}
                 >
                     {item.description}
                 </Typography>
-                <Box>
+                <Box width={"100%"} display={"flex"} flexDirection={"row"} flexWrap={"wrap"}>
                     {
                         item.flags.map(flag => {
                             return (
                                 <Typography key={flag} sx={{
                                         backgroundColor: "#EAB41E",
-                                        marginX: "5px"
+                                        marginX: "5px",
+                                        marginY: "5px"
                                     }} 
                                     component={"p"}
                                     display={"inline"}
@@ -94,11 +97,10 @@ export const ProjectItem = (item: IProjectItem) => {
                 </Box>
             </Box>
             <Box
-                width={"5%"}
-                // height={"150px"}
-                height={"100%"}
+                width={mdDown ? "100%" : "5%"}
+                height={mdDown ? "100px" : "100%"}
                 display={"flex"}
-                flexDirection={"column"}
+                flexDirection={mdDown ? "row" : "column"}
                 alignItems={"center"}
                 justifyContent={"space-evenly"}
             >
